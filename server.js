@@ -2,6 +2,7 @@ const fs = require('fs');
 const bodyParser = require('body-parser');
 const jsonServer = require('json-server');
 const jwt = require('jsonwebtoken');
+const port = process.env.PORT || 3004;
 
 const server = jsonServer.create();
 const router = jsonServer.router('./db.json');
@@ -85,6 +86,6 @@ server.use(
 
 server.use(router);
 
-server.listen(3004, () => {
+server.listen(port, () => {
   console.log('Run API Server');
 });
